@@ -26,6 +26,13 @@ require("lazy").setup({
   },
 }, lazy_config)
 
+require("mason").setup {
+  registries = {
+    "github:mason-org/mason-registry",
+    "github:Crashdummyy/mason-registry",
+  },
+}
+
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")

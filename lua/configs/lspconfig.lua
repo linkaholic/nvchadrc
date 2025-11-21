@@ -12,7 +12,7 @@ local servers = {
   "pyright",
   "jdtls",
   "zls",
-  "ols"
+  "ols",
 }
 
 -- lsps with default config
@@ -24,4 +24,4 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.old.setup{}
+lspconfig.old.setup {}
