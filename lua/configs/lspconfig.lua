@@ -1,7 +1,7 @@
 local nvlsp = require "nvchad.configs.lspconfig"
 local lspconfig = require "lspconfig"
 
-nvlsp.defaults()
+-- nvlsp.defaults()
 
 local servers = {
   "html",
@@ -25,3 +25,7 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig.old.setup {}
+local servers = { "html", "cssls" }
+vim.lsp.enable(servers)
+
+-- read :h vim.lsp.config for changing options of lsp servers 

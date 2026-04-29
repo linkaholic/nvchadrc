@@ -49,5 +49,11 @@ M.nvdash = {
     { txt = "─", hl = "NvDashFooter", no_gap = true, rep = true },
   },
 }
+-- M.nvdash = { load_on_startup = true }
+-- M.ui = {
+--       tabufline = {
+--          lazyload = false
+--      }
+-- }
 
 return M
