@@ -1,8 +1,7 @@
 local nvlsp = require "nvchad.configs.lspconfig"
-local lspconfig = require "lspconfig"
+nvlsp.defaults()
 
--- nvlsp.defaults()
-
+-- Define servers
 local servers = {
   "html",
   "cssls",
@@ -15,17 +14,13 @@ local servers = {
   "ols",
 }
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+-- Configure each server
+for _, server in ipairs(servers) do
+  vim.lsp.config(server, {
     on_attach = nvlsp.on_attach,
     on_init = nvlsp.on_init,
     capabilities = nvlsp.capabilities,
-  }
+  })
 end
 
-lspconfig.old.setup {}
-local servers = { "html", "cssls" }
 vim.lsp.enable(servers)
-
--- read :h vim.lsp.config for changing options of lsp servers 
