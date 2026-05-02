@@ -56,4 +56,10 @@ M.nvdash = {
 --      }
 -- }
 
+M.ui = {
+  cmp = {
+    style = "atom_colored",
+  },
+}
+
 return M
