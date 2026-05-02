@@ -12,6 +12,7 @@ local servers = {
   "jdtls",
   "zls",
   "ols",
+  "rust_analyzer",
 }
 
 -- Configure each server

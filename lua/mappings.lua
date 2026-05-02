@@ -57,3 +57,9 @@ map("n", "K", vim.lsp.buf.hover, { desc = "Show documentation for under cursor" 
 -- Adding inserts with normal mode without leaving normal mode
 vim.keymap.set("n", "<CR>", "m`o<Esc>``")
 vim.keymap.set("n", "<S-CR>", "m`O<Esc>``")
+
+-- Move easily between the terminals
+map("t", "<C-h>", [[<C-\><C-n><C-w>h]])
+map("t", "<C-l>", [[<C-\><C-n><C-w>l]])
+map("t", "<C-j>", [[<C-\><C-n><C-w>j]])
+map("t", "<C-k>", [[<C-\><C-n><C-w>k]])
