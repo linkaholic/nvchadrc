@@ -33,10 +33,10 @@ map("v", "<Tab>", ">gv", { desc = "Indent to the right" })
 map("v", "<S-Tab>", "<gv", { desc = "Indent to the left" })
 
 -- Telescope
-map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
-map("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Find recent" })
-map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find word" })
-map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find current" })
+-- map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
+-- map("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Find recent" })
+-- map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find word" })
+-- map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find current" })
 
 -- Workspaces
 map("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save workspace" })
@@ -55,11 +55,15 @@ map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show line diagnostics
 map("n", "K", vim.lsp.buf.hover, { desc = "Show documentation for under cursor" })
 
 -- Adding inserts with normal mode without leaving normal mode
-vim.keymap.set("n", "<CR>", "m`o<Esc>``")
-vim.keymap.set("n", "<S-CR>", "m`O<Esc>``")
+map("n", "<CR>", "o<Esc>")
+map("n", "<S-CR>", "O<Esc>")
 
 -- Move easily between the terminals
 map("t", "<C-h>", [[<C-\><C-n><C-w>h]])
 map("t", "<C-l>", [[<C-\><C-n><C-w>l]])
 map("t", "<C-j>", [[<C-\><C-n><C-w>j]])
 map("t", "<C-k>", [[<C-\><C-n><C-w>k]])
+
+map("n", "<C-t>", "<cmd>Telescope find_files<CR>")
+-- map("n", "<C-w>", "<cmd>Telescope live_grep<cr>", { desc = "Find word" })
+map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find word" })
