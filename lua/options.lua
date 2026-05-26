@@ -40,10 +40,7 @@ opt.scrolloff = 190
 opt.undoreload = 0
 
 -- neovide settings
--- vim.g.neovide_opacity = 0.8
--- vim.g.neovide_normal_opacity = 0.8
--- vim.g.neovide_refresh_rate = 60
---
+opt.guifont = "Iosevka Nerd Font Mono"
 
 -- Note! This is for windows only, make sure to enable it then
 -- vim.g.clipboard = {
