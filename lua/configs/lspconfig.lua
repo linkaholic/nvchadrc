@@ -1,4 +1,7 @@
 local nvlsp = require "nvchad.configs.lspconfig"
+local dap = require "dap"
+local dapui = require "dapui"
+
 nvlsp.defaults()
 
 -- Define servers
@@ -12,7 +15,7 @@ local servers = {
   "jdtls",
   "zls",
   "ols",
-  "rust_analyzer",
+  "gopls",
 }
 
 -- Configure each server
@@ -25,3 +28,22 @@ for _, server in ipairs(servers) do
 end
 
 vim.lsp.enable(servers)
+
+-- Debugging settings
+dap.adapters.lldb = {
+  type = "executable",
+  command = "/home/asanme/codelldb/adapter/codelldb",
+  name = "codelldb",
+}
+
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
