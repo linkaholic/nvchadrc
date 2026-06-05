@@ -69,17 +69,16 @@ map("n", "<C-t>", "<cmd>Telescope find_files<CR>")
 map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find word" })
 map("n", "<C-q>", "<C-v>", { desc = "Visual Block (Conflicting)" })
 
-
 -- Debug Mappings
 local dap = require "dap"
 
-map("n", "<A-c>", dap.continue, { desc = "Debug Continue" })
-map("n", "<A-b>", dap.toggle_breakpoint, { desc = "Debug Toggle Breakpoint" })
-map("n", "<A-j>", dap.run_to_cursor, { desc = "Debug Run to Cursor" })
-map("n", "<A-s>", dap.terminate, { desc = "Debug Stop" })
-map("n", "<A-o>", dap.step_over, { desc = "Debug Step Over" })
-map("n", "<A-i>", dap.step_into, { desc = "Debug Step Into" })
-map("n", "<A-u>", dap.step_out, { desc = "Debug Step Out" })
+-- Debugger mappings aligned with Visual Studio 2022
+map("n", "<F3>", dap.toggle_breakpoint, { desc = "Debug Toggle Breakpoint" })
+map("n", "<F4>", dap.continue, { desc = "Debug Continue" })
+map("n", "<F18>", dap.terminate, { desc = "Debug Stop" })
+map("n", "<F6>", dap.step_over, { desc = "Debug Step Over" })
+map("n", "<F7>", dap.step_into, { desc = "Debug Step Into" })
+map("n", "<F19>", dap.step_out, { desc = "Debug Step Out" })
 
 map("n", "<A-e>", function()
   require("dapui").toggle()
