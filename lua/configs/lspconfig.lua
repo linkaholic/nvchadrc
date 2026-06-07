@@ -29,10 +29,14 @@ end
 
 vim.lsp.enable(servers)
 
+-- UNIX only but whatever
+local user = os.getenv "USER"
+local m_command = string.format("/home/%s/codelldb/adapter/codelldb", user)
+
 -- Debugging settings
 dap.adapters.lldb = {
   type = "executable",
-  command = "/home/asanme/codelldb/adapter/codelldb",
+  command = m_command,
   name = "codelldb",
 }
 

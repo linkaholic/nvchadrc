@@ -40,7 +40,7 @@ opt.scrolloff = 190
 opt.undoreload = 0
 
 -- neovide settings
-opt.guifont = "Iosevka Nerd Font Mono"
+opt.guifont = "ZedMono Nerd Font Mono"
 
 vim.lsp.inlay_hint.enable()
 

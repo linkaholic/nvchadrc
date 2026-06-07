@@ -41,3 +41,21 @@ vim.api.nvim_create_user_command("DapBuildAndLaunch", function()
     end,
   })
 end, {})
+
+vim.api.nvim_create_user_command("Run", function()
+  vim.notify("Running cargo...", vim.log.levels.INFO)
+
+  vim.fn.jobstart({ "cargo", "run" }, {
+    stdout_buffered = true,
+    stderr_buffered = true,
+    on_exit = function(_, code)
+      if code ~= 0 then
+        vim.notify("Build failed", vim.log.levels.ERROR)
+        return
+      end
+
+      vim.notify("Build OK", vim.log.levels.INFO)
+      dap.continue()
+    end,
+  })
+end, {})
