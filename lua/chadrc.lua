@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "vague"
+  theme = "chocolate",
 }
 
 M.nvdash = {
@@ -58,7 +58,10 @@ M.nvdash = {
 
 M.ui = {
   cmp = {
-    style = "atom_colored",
+    style = "atom",
+  },
+  statusline = {
+    theme = "vscode_colored"
   },
 }
 

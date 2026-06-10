@@ -6,13 +6,13 @@ nvlsp.defaults()
 
 -- Define servers
 local servers = {
-  "html",
-  "cssls",
-  "tailwindcss",
+  -- "html",
+  -- "cssls",
+  -- "tailwindcss",
   "lua_ls",
   "clangd",
-  "pyright",
-  "jdtls",
+  -- "pyright",
+  -- "jdtls",
   "zls",
   "ols",
   "gopls",
