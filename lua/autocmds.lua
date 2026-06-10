@@ -59,3 +59,10 @@ vim.api.nvim_create_user_command("Run", function()
     end,
   })
 end, {})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "odin",
+  callback = function()
+    vim.treesitter.start()
+  end,
+})

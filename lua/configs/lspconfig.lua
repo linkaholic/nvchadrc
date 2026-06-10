@@ -1,29 +1,19 @@
-local nvlsp = require "nvchad.configs.lspconfig"
 local dap = require "dap"
 local dapui = require "dapui"
 
-nvlsp.defaults()
+local capabilities = require("blink.cmp").get_lsp_capabilities()
 
--- Define servers
 local servers = {
-  -- "html",
-  -- "cssls",
-  -- "tailwindcss",
   "lua_ls",
   "clangd",
-  -- "pyright",
-  -- "jdtls",
   "zls",
   "ols",
   "gopls",
 }
 
--- Configure each server
 for _, server in ipairs(servers) do
   vim.lsp.config(server, {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
+    capabilities = capabilities,
   })
 end
 

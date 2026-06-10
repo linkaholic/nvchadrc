@@ -21,7 +21,7 @@ local options = {
       function(bufnr)
         local filepath = vim.api.nvim_buf_get_name(bufnr)
         return {
-          exe = "/usr/bin/odinfmt",
+          exe = "/usr/sbin/odinfmt",
           args = { "-w", filepath },
           stdin = false,
         }

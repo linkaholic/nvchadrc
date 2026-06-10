@@ -85,3 +85,7 @@ map("n", "<F23>", ":Run<CR>", { desc = "Run Rust program" })
 map("n", "<A-e>", function()
   require("dapui").toggle()
 end, { desc = "DAP UI Toggle" })
+
+vim.keymap.set("n", "<leader>fm", function()
+  vim.lsp.buf.format { async = true }
+end, { desc = "LSP format" })
