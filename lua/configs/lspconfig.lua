@@ -1,29 +1,17 @@
-local nvlsp = require "nvchad.configs.lspconfig"
-local dap = require "dap"
-local dapui = require "dapui"
+require("nvchad.configs.lspconfig").defaults()
 
-nvlsp.defaults()
-
--- Define servers
 local servers = {
+  "ols",
   "lua_ls",
   "clangd",
   "zls",
-  "ols",
   "gopls",
 }
 
--- Configure each server
-for _, server in ipairs(servers) do
-  vim.lsp.config(server, {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  })
-end
-
 vim.lsp.enable(servers)
 
+local dap = require "dap"
+local dapui = require "dapui"
 -- UNIX only but whatever
 local user = os.getenv "USER"
 local m_command = string.format("/home/%s/codelldb/adapter/codelldb", user)
