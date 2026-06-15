@@ -23,6 +23,18 @@ dap.adapters.lldb = {
   name = "codelldb",
 }
 
+dap.configurations.odin = {
+  {
+    name = "Debug Odin (src)",
+    type = "lldb",
+    request = "launch",
+    program = vim.fn.getcwd() .. "/build/main",
+    cwd = "${workspaceFolder}",
+    stopOnEntry = false,
+    args = {},
+  },
+}
+
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
 end

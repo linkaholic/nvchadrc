@@ -80,7 +80,7 @@ map("n", "<F6>", dap.step_over, { desc = "Debug Step Over" })
 map("n", "<F7>", dap.step_into, { desc = "Debug Step Into" })
 map("n", "<F19>", dap.step_out, { desc = "Debug Step Out" })
 
-map("n", "<F23>", ":Run<CR>", { desc = "Run Rust program" })
+map("n", "<F23>", ":Run<CR>", { desc = "Run debugging" })
 
 map("n", "<A-e>", function()
   require("dapui").toggle()
